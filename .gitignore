@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+.eggs/
+
+# Virtualenv
+.env
+venv/
+ENV/
+env/
+venv.bak/
+
+# Django / SQLite
+db.sqlite3
+db.sqlite3-journal
+
+# Media & static (optional — only if generated locally)
+media/
+staticfiles/
+static/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# dotenv (secrets)
+.env
+# Node
+node_modules/

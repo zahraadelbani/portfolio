@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block title %}About Me - Zahraa{% endblock %}
+{% block content %}
+
+<section class="max-w-6xl mx-auto py-16 px-6">
+  <!-- Heading -->
+  <div class="text-center mb-16" data-aos="fade-up">
+    <h1 class="text-5xl font-extrabold  text-gray-600 dark:text-gray-300 mb-4">About Me</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+      I’m Zahraa, an Information Technology graduate from Eastern Mediterranean University (CGPA 3.92/4.0),
+      passionate about building impactful digital solutions. I’ve worked on diverse projects
+      spanning web apps, AI integration, and management systems.
+    </p>
+  </div>
+
+  <div class="grid gap-10 md:grid-cols-2">
+    <!-- Education Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300" data-aos="fade-up">
+      <div class="flex items-center mb-4">
+        <svg class="w-8 h-8 text-purple-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422A12.083 12.083 0 0118 20.944H6a12.083 12.083 0 01-.16-10.366L12 14z"/>
+        </svg>
+        <h2 class="text-2xl font-semibold">Education</h2>
+      </div>
+      <p class="text-gray-800 dark:text-gray-200">Bachelor of Information Technology, Eastern Mediterranean University (2022–2025)</p>
+      <p class="text-gray-600 dark:text-gray-400 text-sm">Relevant coursework: Algorithms, Data Structures, Software Engineering, Python Web Apps, AI Tools</p>
+    </div>
+
+    <!-- Leadership Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+      <div class="flex items-center mb-4">
+        <svg class="w-8 h-8 text-blue-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M9 12a4 4 0 100-8 4 4 0 000 8zm6 0a4 4 0 100-8 4 4 0 000 8z"/>
+        </svg>
+        <h2 class="text-2xl font-semibold">Leadership</h2>
+      </div>
+      <p class="text-gray-800 dark:text-gray-200">Vice President, EMU IT Club (2023–2024)</p>
+      <p class="text-gray-600 dark:text-gray-400 text-sm">Organized events and grew membership by 20%, leading marketing and interviews with instructors.</p>
+    </div>
+
+    <!-- Experience Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+      <div class="flex items-center mb-4">
+        <svg class="w-8 h-8 text-green-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 12v9m-7-9v9m14-9v9M5 9V5a2 2 0 012-2h10a2 2 0 012 2v4M3 9h18v12H3V9z"/>
+        </svg>
+        <h2 class="text-2xl font-semibold">Experience</h2>
+      </div>
+      <p class="text-gray-800 dark:text-gray-200">Software Engineering Intern — Africell (June–Aug 2024)</p>
+      <ul class="mt-2 text-gray-600 dark:text-gray-400 list-disc list-inside space-y-1">
+        <li>Worked with SQL, billing systems, and POS frontend (React).</li>
+        <li>Supported networking, security, virtualization, and data centers.</li>
+        <li>Contributed to backend/frontend features and system operations.</li>
+      </ul>
+    </div>
+
+    <!-- Skills Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="300">
+      <div class="flex items-center mb-6">
+        <svg class="w-8 h-8 text-pink-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+        </svg>
+        <h2 class="text-2xl font-semibold">Skills & Technologies</h2>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-yellow-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L1.605 6v12L12 24l10.395-6V6z"/></svg>
+          <span>JavaScript</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          <span>Python</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-green-600" viewBox="0 0 24 24" fill="currentColor"><rect width="20" height="20" x="2" y="2" rx="3"/></svg>
+          <span>Django</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-purple-600" viewBox="0 0 24 24" fill="currentColor"><ellipse cx="12" cy="12" rx="10" ry="6"/></svg>
+          <span>PHP</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-orange-500" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v16H4z"/></svg>
+          <span>Java</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-gray-800" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v20H2z"/></svg>
+          <span>C++</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-indigo-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l9 21H3z"/></svg>
+          <span>ASP.NET MVC</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-teal-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l8 24H4z"/></svg>
+          <span>Tailwind CSS</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-pink-500" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          <span>Bootstrap</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-blue-400" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          <span>Git</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l10 20H2z"/></svg>
+          <span>Algorithms</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-6 h-6 text-yellow-600" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v20H2z"/></svg>
+          <span>Embedded SQL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
