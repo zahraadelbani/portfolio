@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_protect
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.conf import settings
 
 from .forms import ContactForm
@@ -32,20 +32,27 @@ def contact_api(request):
 
     data = form.cleaned_data
 
-    # Option A: send email
+    # Prepare email
     subject = f"Website contact from {data['name']}"
     message = f"Name: {data['name']}\nEmail: {data['email']}\n\nMessage:\n{data['message']}"
-    from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', data['email'])
-    recipient = getattr(settings, 'DEFAULT_TO_EMAIL', getattr(settings, 'DEFAULT_FROM_EMAIL', None))
+    from_email = settings.DEFAULT_FROM_EMAIL
+    recipient = getattr(settings, "DEFAULT_TO_EMAIL", settings.DEFAULT_FROM_EMAIL)
 
     if recipient:
         try:
-            send_mail(subject, message, from_email, [recipient], fail_silently=False)
+            email = EmailMessage(
+                subject=subject,
+                body=message,
+                from_email=from_email,
+                to=[recipient],
+                headers={'Reply-To': data['email']}  # user email for reply
+            )
+            email.send(fail_silently=False)
         except Exception as e:
-            # log error in production
+            # Log error in production
             return JsonResponse({'success': False, 'error': 'Failed to send email.'}, status=500)
 
-    # Option B: (optional) save to DB - see step 7
+    # Option B: (optional) save to DB
     # ContactMessage.objects.create(**data)
 
     return JsonResponse({'success': True})
