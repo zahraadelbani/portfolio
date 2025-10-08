@@ -13,7 +13,7 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))  # Load .env variables
 # ==============================
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-dev-key")
 DEBUG = os.getenv("DJANGO_DEBUG", "True") == "True"
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1").split()
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split()
 
 # ==============================
 # 📧 EMAIL CONFIGURATION
