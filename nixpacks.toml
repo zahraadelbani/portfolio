@@ -1,0 +1,18 @@
+[phases.setup]
+# Use both Python and Node.js
+nixPkgs = ["python313", "nodejs_22"]
+
+[phases.install]
+cmds = [
+  "pip install -r requirements.txt",
+  "npm install"
+]
+
+[phases.build]
+cmds = [
+  "npm run build:css",
+  "python manage.py collectstatic --noinput"
+]
+
+[start]
+cmd = "gunicorn zahraa_portfolio.wsgi:application --bind 0.0.0.0:$PORT"
