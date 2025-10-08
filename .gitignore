@@ -23,7 +23,7 @@ db.sqlite3-journal
 # Media & static (optional — only if generated locally)
 media/
 staticfiles/
-static/
+
 
 # IDE / Editor
 .vscode/
