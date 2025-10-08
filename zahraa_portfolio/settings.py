@@ -18,6 +18,9 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1").split()
 # ==============================
 # 📧 EMAIL CONFIGURATION
 # ==============================
+import socket
+
+# Try Gmail SMTP by default
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
@@ -25,6 +28,14 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "").strip()
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "").strip()
 DEFAULT_TO_EMAIL = os.getenv("DEFAULT_TO_EMAIL", "").strip()
+
+# Detect Railway environment (where SMTP is blocked)
+RUNNING_ON_RAILWAY = "RAILWAY_STATIC_URL" in os.environ or "RAILWAY_ENVIRONMENT" in os.environ
+
+if RUNNING_ON_RAILWAY:
+    print("⚠️  Railway environment detected — using console email backend.")
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
 
 # ==============================
 # 🧩 INSTALLED APPS
